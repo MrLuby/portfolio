@@ -1,0 +1,857 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+header {
+    position: relative;
+    background-image: url(../img/tlo.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 90vh;
+    overflow: hidden;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+header img {
+    position: absolute;
+    bottom: 0;
+    right: 0%;
+    height: 50%;
+}
+
+header div.welcome {
+    z-index: 1;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    right: 5%;
+    text-align: center;
+    font-family: 'Saira Condensed', sans-serif;
+    font-weight: bold;
+    font-size: 40px;
+    color: white;
+    text-transform: uppercase;
+}
+
+
+header h1 {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+header h2 {
+    font-size: 20px;
+    font-weight: normal;
+}
+
+header button {
+    margin-top: 45px;
+    font-family: 'Saira', sans-serif;
+    font-weight: 300;
+    line-height: 32px;
+    padding: 0 20px;
+    text-transform: uppercase;
+    color: white;
+    background-color: transparent;
+    font-size: 12px;
+    border: 2px solid white;
+}
+
+@media (orientation: portrait) and (min-width: 320px) {
+
+    header img {
+        right: 13%;
+    }
+
+    header div.welcome {
+        top: 3%;
+    }
+
+    header h1 {
+        font-size: 22px;
+    }
+
+    header h2 {
+        font-size: 22px;
+    }
+
+    header button {
+        margin-top: -10px;
+        line-height: 35px;
+        font-size: 14px;
+    }
+}
+
+@media (orientation: portrait) and (min-width: 360px) {
+    header img {
+        right: 11%;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    header h2 {
+        font-size: 24px;
+    }
+
+    header button {
+        margin-top: 30px;
+        line-height: 40px;
+        font-size: 16px;
+    }
+}
+
+
+@media (orientation: portrait) and (min-width: 410px) {
+
+    header div.welcome {
+        top: 5%;
+    }
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    header h2 {
+        font-size: 30px;
+    }
+
+    header button {
+        margin-top: 45px;
+        line-height: 50px;
+        font-size: 18px;
+    }
+}
+
+@media (orientation: portrait) and (min-width: 768px) {
+    header img {
+        right: 18%;
+        height: 55%;
+    }
+
+    header div.welcome {
+        font-size: 65px;
+    }
+
+    header h1 {
+        font-size: 45px;
+    }
+
+    header h2 {
+        font-size: 45px;
+    }
+
+    header button {
+        margin-top: 10px;
+        line-height: 60px;
+        font-size: 25px;
+    }
+}
+
+/*============== media landscape ============*/
+
+@media (orientation: landscape) {
+    header img {
+        height: 85%;
+        right: 3%;
+    }
+
+    header div.welcome {
+        top: 10%;
+        left: 5%;
+        right: 50%;
+    }
+
+    header button {
+        margin-top: -20px;
+    }
+}
+
+@media (orientation: landscape) and (min-width: 735px) {
+    header img {
+        height: 85%;
+        right: 3%;
+    }
+
+    header div.welcome {
+        top: 15%;
+        left: 5%;
+        right: 50%;
+    }
+
+    header h1 {
+        font-size: 26px;
+    }
+
+    header h2 {
+        font-size: 26px;
+    }
+
+    header button {
+        margin-top: 40px;
+        line-height: 40px;
+        font-size: 16px;
+    }
+}
+
+@media (orientation: landscape) and (min-width: 1024px) {
+
+    header div.welcome {
+        top: 10%;
+        left: 0;
+        right: 50%;
+        font-size: 60px;
+    }
+
+    header h1 {
+        font-size: 40px;
+    }
+
+    header h2 {
+        font-size: 40px;
+    }
+
+    header button {
+        margin-top: 50px;
+        line-height: 60px;
+        font-size: 24px;
+        cursor: pointer;
+        transition: 0.5s;
+        border: 4px solid white;
+    }
+
+    header button:hover {
+        background-color: rgba(255, 255, 255, 0.4);
+        color: #111;
+    }
+}
+
+@media (orientation: landscape) and (min-width: 1440px) {
+    header div.welcome {
+        font-size: 70px;
+        top: 15%;
+    }
+
+    header h1 {
+        font-size: 45px;
+        margin-top: 30px;
+    }
+
+    header h2 {
+        font-size: 45px;
+    }
+}
+
+/*================> SCROLL UP =======================*/
+
+#topBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 30px;
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: none;
+    text-shadow: 0 15px 0 white;
+    transition: 1.5s;
+    overflow: hidden;
+}
+
+#topBtn:hover {
+    border: 2px solid black;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: black;
+    text-shadow: 0 15px 0 black;
+}
+
+.fas {
+    animation: arrow 1.8s infinite linear;
+}
+
+@media (orientation: portrait) and (min-width: 768px) {
+    #topBtn {
+        width: 80px;
+        height: 80px;
+        font-size: 55px;
+        text-shadow: 0 25px 0 white;
+    }
+
+    .fas {
+        animation: arrow 1.4s infinite linear;
+    }
+
+    #topBtn:hover {
+        border: 2px solid black;
+        background-color: rgba(255, 255, 255, 0.5);
+        color: black;
+        text-shadow: 0 25px 0 black;
+    }
+}
+
+@media (min-width: 1024px) {
+    #topBtn {
+        width: 80px;
+        height: 80px;
+        font-size: 55px;
+        bottom: 40px;
+        right: 60px;
+        text-shadow: 0 25px 0 white;
+    }
+
+    .fas {
+        animation: arrow 1.4s infinite linear;
+    }
+
+    #topBtn:hover {
+        border: 2px solid black;
+        background-color: rgba(255, 255, 255, 0.5);
+        color: black;
+        text-shadow: 0 25px 0 black;
+    }
+}
+
+@keyframes arrow {
+    0% {
+        transform: translateY(65px)
+    }
+
+    50% {
+        transform: translateY(0)
+    }
+
+    100% {
+        transform: translateY(-65px)
+    }
+}
+
+/*===============> SEKCJA 1 CECHY ====================*/
+
+.features {
+    max-width: 1600px;
+    margin: 50px auto 0;
+    padding: 5%;
+    text-align: center;
+}
+
+.features h1 {
+    font-family: 'Saira Condensed', sans-serif;
+    text-transform: uppercase;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.features h2 {
+    font-family: 'Saira Condensed', sans-serif;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+
+.features img {
+    width: 100%;
+    margin: 5px 0;
+    max-width: 375px;
+}
+
+.feature p {
+    font-family: 'Saira', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    margin: 10px 0;
+}
+
+@media (orientation: portrait) and (min-width: 410px) {
+    .features h1 {
+        font-size: 30px;
+    }
+
+    .features h2 {
+        font-size: 24px;
+    }
+
+    .feature p {
+        font-size: 16px;
+    }
+}
+
+@media (orientation: portrait) and (min-width: 768px) {
+    .features h1 {
+        font-size: 45px;
+    }
+
+    .features h2 {
+        font-size: 34px;
+    }
+
+    .feature p {
+        font-size: 24px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .feature {
+        float: left;
+        width: 33%;
+        padding: 2%;
+    }
+
+    .features h1 {
+        font-size: 34px;
+    }
+
+    .features h2 {
+        font-size: 20px;
+    }
+
+    .feature p {
+        font-size: 16px;
+        line-height: 130%;
+    }
+}
+
+@media (min-width: 1440px) {
+    .features h1 {
+        font-size: 55px;
+    }
+
+    .features h2 {
+        font-size: 30px;
+    }
+
+    .feature p {
+        font-size: 22px;
+    }
+}
+
+/*================> SEKCJA 2 PORTFOLIO <=================*/
+
+.portfolio {
+    background-color: gainsboro;
+    padding-bottom: 30px;
+}
+
+.portfolio h1 {
+    font-family: 'Saira Condensed', sans-serif;
+    font-size: 28px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.portfolio .web img {
+    width: 100%;
+}
+
+.portfolio .web img:hover {
+    opacity: 0.5;
+    transition: 1s;
+    cursor: pointer;
+}
+
+.portfolio .about {
+    font-family: 'Saira', sans-serif;
+    font-weight: normal;
+    padding: 10px 20px 20px 0;
+    text-align: left;
+}
+
+.portfolio .about h2 {
+    font-size: 18px;
+    color: white;
+    border-bottom: 2px solid white;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    text-indent: 20px;
+}
+
+.portfolio .about a {
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+
+.portfolio .about a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transition: 1s;
+}
+
+.portfolio .about p {
+    font-size: 12px;
+    color: white;
+    padding-left: 20px;
+}
+
+.portfolio .project {
+    max-width: 1400px;
+    margin: 0 auto 20px;
+}
+
+.portfolio .project:nth-of-type(even) {
+    background-color: #29a6dc;
+}
+
+.portfolio .project:nth-of-type(odd) {
+    background-color: #d616e0;
+}
+
+@media (orientation: portrait) and (min-width: 768px) {
+    .portfolio h1 {
+        font-size: 45px;
+    }
+
+    .portfolio .about h2 {
+        font-size: 34px;
+    }
+
+    .portfolio .about p {
+        font-size: 24px;
+    }
+}
+
+@media (orientation: landscape) {
+
+    .web,
+    .about {
+        width: 50%;
+        float: left;
+    }
+
+    .web img {
+        display: block;
+    }
+
+
+    .portfolio .project:nth-of-type(even) .web {
+        float: right;
+    }
+
+    .portfolio .project:nth-of-type(even) .about {
+        padding-right: 0;
+    }
+
+    .portfolio .project:nth-of-type(even) .about p {
+        padding-right: 20px;
+    }
+
+    .portfolio .project:nth-of-type(even) .about h2 {
+        text-indent: 0;
+        margin-left: 20px;
+    }
+}
+
+@media (orientation: landscape) and (min-width: 533px) {
+    .portfolio .about h2 {
+        font-size: 18px;
+    }
+
+    .portfolio .about p {
+        line-height: 140%;
+    }
+}
+
+@media (orientation: landscape) and (min-width: 666px) {
+    .portfolio .about h2 {
+        font-size: 20px;
+    }
+
+    .portfolio .about p {
+        font-size: 16px;
+        line-height: 140%;
+    }
+}
+
+
+@media (orientation: landscape) and (min-width: 1024px) {
+    .portfolio h1 {
+        font-size: 40px;
+    }
+
+    .portfolio .about h2 {
+        padding-top: 40px;
+        font-size: 30px;
+        text-indent: 40px;
+
+    }
+
+    .portfolio .about p {
+        font-size: 20px;
+        margin-top: 40px;
+        margin-left: 20px;
+    }
+
+    .portfolio .project {
+        margin-bottom: 50px;
+    }
+
+    .portfolio .project:nth-of-type(even) .about h2 {
+        margin-left: 40px;
+    }
+}
+
+/*==================> SEKCJA 3 MOTTO =========================*/
+
+.slogan {
+    text-align: center;
+    background-image: url("../img/motto.jpg");
+    color: white;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.slogan h1 {
+    font-family: 'Saira Condensed', sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    line-height: 125%;
+}
+
+.slogan p {
+    font-family: 'Saira', sans-serif;
+    font-size: 18px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.slogan p.author {
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+.slogan .bg {
+    padding: 30px 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: 768px) and (orientation: portrait) {
+    .slogan h1 {
+        font-size: 34px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .slogan p {
+        font-size: 24px;
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+
+    .slogan p.author {
+        font-size: 20px;
+    }
+}
+
+
+@media (orientation: landscape) {
+    .slogan p {
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (orientation: landscape) and (min-width: 1024px) {
+    .slogan h1 {
+        margin-top: 20px;
+        margin-bottom: 30px;
+        font-size: 36px;
+    }
+
+    .slogan p {
+        font-size: 24px;
+        width: 50%;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .slogan p.author {
+        font-size: 20px;
+        padding-top: 30px;
+        padding-bottom: 20px;
+    }
+}
+
+/*=================> SEKCJA 4 KONTAKT ====================*/
+
+.contact {
+    background-color: #000;
+    padding: 30px 20px;
+}
+
+.contact h1 {
+    font-family: 'Saira Condensed', sans-serif;
+    font-size: 26px;
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.contact .wrap {
+    padding-top: 20px;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.contact input,
+.contact button,
+.contact textarea {
+    width: 100%;
+    margin-bottom: 25px;
+    font-family: 'Saira', sans-serif;
+    font-size: 12px;
+}
+
+.contact input {
+    height: 36px;
+}
+
+.contact textarea {
+    height: 120px;
+}
+
+.contact button {
+    font-size: 14px;
+    line-height: 40px;
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+}
+
+.contact .socials {
+    padding-top: 30px;
+    font-size: 0;
+}
+
+.contact .social {
+    padding: 10px 0;
+    color: white;
+    font-family: 'Saira Condensed', sans-serif;
+}
+
+.contact .social img {
+    float: left;
+}
+
+.contact .social span {
+    line-height: 72px;
+    padding-left: 20px;
+    float: left;
+    font-size: 16px;
+    width: 70%;
+}
+
+
+
+@media (orientation: portrait) and (min-width: 410px) {
+
+    .contact input,
+    .contact button,
+    .contact textarea {
+        font-size: 16px;
+    }
+
+    .contact .social span {
+        font-size: 20px;
+    }
+}
+
+@media (orientation: portrait) and (min-width: 768px) {
+    .contact h1 {
+        font-size: 34px;
+    }
+
+    .contact input,
+    .contact button,
+    .contact textarea {
+        font-size: 24px;
+    }
+
+    .contact .social span {
+        font-size: 28px;
+    }
+}
+
+
+
+@media (orientation: landscape) and (min-width: 533px) {
+    .contact .social {
+        display: inline-block;
+        width: 50%;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    .contact h1 {
+        font-size: 36px;
+        margin-top: 20px;
+    }
+
+    .contact form,
+    .contact .socials {
+        float: left;
+        width: 50%;
+        padding: 0 10px;
+    }
+
+    .contact form {
+        padding-top: 25px
+    }
+
+    .contact .social {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .contact .social span {
+        padding-left: 15px;
+        font-size: 22px;
+    }
+
+    .contact input {
+        height: 46px;
+        font-size: 18px;
+    }
+
+    .contact textarea {
+        height: 180px;
+        font-size: 18px;
+    }
+
+    .contact button {
+        height: 50px;
+        font-size: 20px;
+    }
+
+    .contact button:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        cursor: pointer;
+        transition: 0.5s;
+    }
+}
+
+footer {
+    background-color: #29a6dc;
+    color: white;
+    font-family: 'Saira', sans-serif;
+    text-align: center;
+    font-size: 24px;
+    padding: 15px 0;
+}
